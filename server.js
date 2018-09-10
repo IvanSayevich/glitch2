@@ -28,7 +28,7 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-app.get('/api/timestamp/:time', (req, res) => res.json({echo: req.params.time}));
+app.get('/api/timestamp/:time', (req, res) => res.json({echo: new Date(req.params.time)}));
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
