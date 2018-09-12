@@ -30,13 +30,14 @@ app.get("/api/hello", function (req, res) {
 
 app.get('/api/timestamp/:time', (req, res) => {
   let data = req.params.time;
+  let date;
   let utc;
   let unix;
   if(typeof data === 'string'){
-    console.log('string');
-    utc = new Date(data);
-    unix = utc.getTime();
-    utc = utc.toUTCString();
+    date = new Date(data);
+    data 'Invalid Date'
+    unix = date.getTime();
+    utc = date.toUTCString();
   }else if(data === ' '){
     unix = 1;
     utc = 1;
