@@ -33,9 +33,13 @@ app.get('/api/timestamp/:time', (req, res) => {
   let utc;
   let unix;
   if(typeof data === 'string'){
+    console.log('string');
     utc = new Date(data);
     unix = + new Date(data);
     utc = utc.toUTCString();
+  }else if(data === ' '){
+    unix = 1;
+    utc = 1;
   }
   res.json({"unix": unix, "utc": utc})});
 
